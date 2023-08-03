@@ -1,0 +1,108 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Cascadia Mono', sans-serif;
+    font-weight: normal;
+}
+/*
+Applies the styles to all the elements
+
+box-sizing: border-box; ensures that padding and borders are included in the element's total width and height.
+font-family: sets the font to 'Cascadia Mono' and uses a generic sans-serif font as a fallback.
+font-weight: normal; sets the font weight to normal for all elements.
+*/
+
+body {
+    margin-top: 30px;
+    padding: 0;
+    background: linear-gradient(to right, #8b80ac , #250c69);
+    text-align: center;
+}
+
+/*
+margin-top: 50px; adds a top margin of 50 pixels.
+padding: 0; removes padding from the body.
+background: linear-gradient(to right, #8b80ac , #250c69); sets a linear gradient background from left to right.
+*/
+
+.calculatorGrid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+    border: 5px solid #8b80ac;
+    margin-left: 470px;
+    margin-right: 470px;
+}
+
+/*
+display: grid; makes it a grid container.
+justify-content: center; horizontally centers the content.
+align-items: center; vertically centers the content.
+min-height: 80vh; sets a minimum height of 80% of the viewport height.
+grid-template-columns: repeat(4, 100px); creates 4 grid columns each 100 pixels wide.
+grid-template-rows: minmax(120px, auto) repeat(5, 80px); sets rows with a minimum height of 120px and auto for the rest, followed by 5 rows each 80px tall.
+border: 5px solid #8b80ac; adds a 5px solid border with color #8b80ac.
+margin-left: 470px; margin-right: 470px; adds horizontal margins of 470px each.
+*/
+
+.calculatorGrid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1.2px solid #fff;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+    border-radius: 5px;
+}
+
+/*
+cursor: pointer; changes the cursor to a pointer  on hover.
+font-size: 2rem; sets the font size to 2 times the root font size.
+border: 1.2px solid #fff; adds a border of 1.2 pixels with color white.
+outline: none; removes the default outline when the button is focused.
+background-color: rgba(255, 255, 255, .75); sets a semi-transparent white background color.
+border-radius: 5px; curves the borders by 5 pixels.
+*/
+
+.calculatorGrid > button:hover {
+    background-color: rgba(255, 255, 255, 0.349);
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 15px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/*
+grid-column: 1 / -1; spans the entire width of the grid columns.
+display: flex; makes it a flex container.
+align-items: flex-end; aligns flex items at the bottom.
+justify-content: space-around; distributes space evenly around flex items.
+flex-direction: column; arranges flex items vertically.
+word-wrap: break-word; allows long words to be broken and wrap onto the next line.
+word-break: break-all; breaks words at any character if needed.
+*/
+
+.doubleSpace {
+    grid-column: span 2;
+    background-color: rgba(139, 0, 139, 0.8);
+    color: black;
+}
+
+.previousOperand {
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+
+.currentOperand {
+    color: white;
+    font-size: 2.5rem;
+}
